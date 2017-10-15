@@ -47,4 +47,9 @@ public class CalculatorTest{
 	public void stringIgnoreOver1k(){
 		assertEquals(2, Calculator.add("1001,2"));
 	}
+
+	@Test
+	public void testss(){
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
 }
