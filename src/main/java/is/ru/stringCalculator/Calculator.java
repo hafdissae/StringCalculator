@@ -11,21 +11,16 @@ public class Calculator{
 			else if (text.length() == 1) {
 				return Integer.parseInt(text);
 			}
-			else if (text.contains(",")) {
-				String[] num = text.split(",");
+			else if (text.contains("\n") || text.contains(",")) {
+				String[] num = text.split("\n|,");
 				int l = num.length;
+				int s = 0;
 
-				if (l == 2){
-					return Integer.parseInt(num[0]) + Integer.parseInt(num[1]);	
-				}
-				else {
-					int s = 0;
-					for (int i = 0; i < l; i++) {
-						s += Integer.parseInt(num[i]); 
-					}	
+				for (int i = 0; i < l; i++) {
+					s += Integer.parseInt(num[i]); 
+				}	
 
-					return s;
-				}
+				return s;
 			}
 			else {
 				return 1;
