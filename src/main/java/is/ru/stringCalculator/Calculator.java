@@ -1,5 +1,5 @@
 package is.ru.stringCalculator;
-
+import java.util.ArrayList;
 
 
 public class Calculator{
@@ -13,18 +13,32 @@ public class Calculator{
 			}
 			else if (text.contains("\n") || text.contains(",")) {
 				String[] num = text.split("\n|,");
-				int l = num.length;
-				int s = 0;
-
-				for (int i = 0; i < l; i++) {
-					s += Integer.parseInt(num[i]); 
-				}	
-
-				return s;
+				
+				return calcSum(num);
 			}
 			else {
 				return 1;
 			}
+	}
+
+	private static int calcSum(String[] arrNum) {
+		int s = 0;
+		int l = arrNum.length;
+		ArrayList<Integer> nNum = new ArrayList<Integer>();
+
+		for (int i = 0; i < l; i++) {
+			if (Integer.parseInt(arrNum[i]) < 0){
+				nNum.add(Integer.parseInt(arrNum[i]));
+			}
+			else{
+				s += Integer.parseInt(arrNum[i]);	
+			}
+		}
+		if (nNum.size() > 0) {
+			throw new RuntimeException("Negatives not allowed: " + nNum);
+		}
+
+		return s;
 	}
 }
 
