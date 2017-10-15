@@ -42,4 +42,9 @@ public class CalculatorTest{
 		assertNotNull(ex);
 		assertEquals("Negatives not allowed: [-6, -18]", ex.getMessage());
 	}
+
+	@Test
+	public void stringIgnoreOver1k(){
+		assertEquals(2, Calculator.add("1001,2"));
+	}
 }

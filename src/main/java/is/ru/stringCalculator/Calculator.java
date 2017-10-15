@@ -30,6 +30,9 @@ public class Calculator{
 			if (Integer.parseInt(arrNum[i]) < 0){
 				nNum.add(Integer.parseInt(arrNum[i]));
 			}
+			else if (Integer.parseInt(arrNum[i]) > 1000){
+				s += 0;
+			}
 			else{
 				s += Integer.parseInt(arrNum[i]);	
 			}
