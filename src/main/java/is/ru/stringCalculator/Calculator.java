@@ -11,6 +11,10 @@ public class Calculator{
 			else if (text.length() == 1) {
 				return Integer.parseInt(text);
 			}
+			else if (text.contains(",")) {
+				String[] num = text.split(",");
+				return Integer.parseInt(num[0]) + Integer.parseInt(num[1]);
+			}
 			else {
 				return 1;
 			}
